@@ -23,11 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-sw22wv6h-ctt=z%t7w#p%ogu79*$@vs&=0&t!jh1q^@ch%xr1i'
 TOKEN_CSRF = os.getenv('TOKEN_CSRF')
+
 if TOKEN_CSRF:
-    SECRET_KEY = TOKEN_CSRF
-    CSRF_TRUSTED_ORIGINS = ['https://projetongoladjango-production.up.railway.app']
+
+   SECRET_KEY = TOKEN_CSRF
+   CSRF_TRUSTED_ORIGINS = ['https://projetongoladjango-production.up.railway.app']
 else:
-# SECURITY WARNING: don't run with debug turned on in production!
+
+   # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["projetongoladjango-production.up.railway.app/", "localhost", "http://127.0.0.1" ]
